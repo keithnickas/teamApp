@@ -1,0 +1,27 @@
+<div class="large-12 form-inline">
+  <div class="row small-3 addUser hide form-inline">
+    <form ng-submit="vm.addUser()" class="form-inline user-form">
+      <div class="form-group form-inline">
+        <label for="name" class="label">Name:</label>
+          <input ng-model="vm.newUser.name" type="text" class="form-control" name="name" placeholder="Name" required>
+        <label for="phone" class="label">Phone Number:</label>
+          <input ng-model="vm.newUser.phone" type="text" class="form-control" name="phone" placeholder="Phone Number" required>
+        <label for="email" class="label">Email:</label>
+          <input ng-model="vm.newUser.email" type="email" class="form-control" name="email" placeholder="email" required>
+        <label for="team" class="label">User Name:</label>
+          <input ng-model="vm.newUser.teamName" type="text" class="form-control" name="team" placeholder="Team">
+        <button id="addUserButton" type="submit" class="button primary"><i class="fa fa-user-plus"></i> Add User</button>
+      </div>
+    </form>
+  </div>    
+</div>
+<script type="text/javascript">
+  $('#addUserButton').click(
+  function()
+  {
+    $('.newUser').removeClass('active');
+    $('.addUser').removeClass('active').addClass('hide');
+  }
+);
+</script>
+

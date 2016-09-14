@@ -1,0 +1,45 @@
+<div class="large-12 table">
+  <div id="teamMembersWrapper" class="row">
+    <div class="teamMembersSearch large-12">
+      <div class="row">
+        <div class="large-6 columns">
+            <label class="formSearchInput">Search by name or email:
+                <input class="searchField" type="text" ng-model="query" placeholder="Search for a team member" autofocus="autofocus"/>
+            </label>
+        </div>
+        <div class="sortBy large-3 columns">
+            <label>Sort By:
+                <select ng-model="sortBy">
+                    <option value="name">Name</option>
+                    <option value="email">Email</option>
+                    <option value="team">Team</option>
+                    <option value="city">City</option>
+                </select>
+            </label>
+        </div>
+      </div>
+    </div>
+      <div class="teamMembersList large-12">
+        <div class="row">
+          <ul id="usersList" class="large-6 columns">
+          <li ng-animate="'animate'" class="columns userListItem" ng-repeat="(key, team) in vm.teams | filter: query | orderBy: sortBy" index="{{user.$key}}">
+            <span class="userName columns">{{team}} 
+                <span class="inlineDetails">
+                  <span class="userTeam"><span class="bold">Team:</span> {{teams.teamName || "No team, they're buying cake!"}}</span>
+                </span>
+              </span>
+              <div class="large-6 columns">
+                <span class="userEmail columns"><span class="bold">Email:</span> <a href="mailto:{{item.email | lowercase}}" class="userEmailAddress">{{teams.email | lowercase}}</a></span>
+                <span class="userTeam columns"><span class="bold">Team:</span> {{teams.teamName || "No team, they're buying cake!"}}
+                <button ng-click="vm.removeUserFromTeam(user.teamName)" title="Remove User from Team" class="tiny button alert"><i class="fa fa-times"></i></button></span>
+                <span class="userLocation columns"><span class="bold">Phone:</span> {{teams.phone}}</span>
+              </div>
+              <div class="large-6 columns removeUser">
+                <button ng-click="vm.removeUser(user)" class="button warning columns right">Remove User</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</div>
