@@ -16,7 +16,7 @@
         bindToController: true,
         scope: 
         {
-          users: '='
+          users: '=',
         }
       };
     }
@@ -35,6 +35,7 @@
         vm.users.$add(vm.newUser);
         vm.newUser = new userService.User();
       }
+
     }
   }
 )();

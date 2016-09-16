@@ -21,8 +21,6 @@
       };
     }
 
-    TeamsListController.$inject = ['teamService'];
-
     function TeamsListController(teamService)
     {
       var vm = this;

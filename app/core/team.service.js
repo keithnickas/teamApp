@@ -6,9 +6,13 @@
       .module('app.core')
       .factory('teamService', teamService);
 
-    teamService.$inject = ['$firebaseArray', 'firebaseDataService'];
+    teamService.$inject = [
+                            '$firebaseArray',
+                            '$firebaseObject',
+                            'firebaseDataService'
+                          ];
 
-    function teamService($firebaseArray, firebaseDataService)
+    function teamService($firebaseArray, $firebaseObject, firebaseDataService)
     {
       var teams = null;
       
@@ -31,8 +35,13 @@
         {
           teams = $firebaseArray(firebaseDataService.teams);
         }
-        console.log(teams);
         return teams;
+
+        if(!teamUsers)
+        {
+          teamUsers = $firebaseArray(firebaseDataService.teams.users);
+        }
+        return teamUsers;
       }
 
       function reset()
@@ -46,3 +55,6 @@
     }
   }
 )();
+
+
+

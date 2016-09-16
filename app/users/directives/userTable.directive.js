@@ -15,7 +15,7 @@
         controllerAs: 'vm',
         bindToController: true,
         scope: {
-          users: '='
+          users: '=',
         }
       };
     }
@@ -25,10 +25,29 @@
     function UsersTableController(userService)
     {
       var vm = this;
-
       vm.removeUser = removeUser;
+      vm.removeTeam = removeTeam;
+      vm.addTeamToUser = addTeamToUser;
 
-      // removes the selecte user
+      function removeTeam(user)
+      {
+        // this will set the value for teamName to null before being saved back to the firebaseData.service REST api
+        //vm.users.$save(user.teamName = "null");
+        vm.users.$save(user.teamName = "null");
+        // this saves the changes to firebaseData.service REST api
+        vm.users.push(user);
+
+      }
+      /*
+        TODO: this item is in progress; current bug is the "user" scope expression is undefined when init function from
+        the form 
+      */
+      function addTeamToUser(user) 
+      {
+
+      }
+
+      // removes the selected user
       function removeUser(user)
       {
         vm.users.$remove(user);

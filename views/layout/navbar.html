@@ -1,8 +1,7 @@
-<nav class="large-12 navbar navbar-inverse navbar-fixed-top">
-  <div id="topNavigation" class="large-12 lightBg" ng-show="vm.isLoggedIn()">
-    <div class="row">
-      <a href="#/users" class="button">Users</a>
-      <a href="#/teams" class="button">Teams</a>
-    </div>
-  </div>
-</nav>
+<div id="topNavigation" class="large-3 columns" ng-show="vm.isLoggedIn()">
+  <a href="#/users" class="button hollow navButton">Users</a>
+  <a href="#/teams" class="button hollow navButton">Teams</a>
+</div>
+<script type="text/javascript">
+  navigation();
+</script>

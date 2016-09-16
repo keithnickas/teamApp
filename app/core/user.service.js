@@ -6,12 +6,16 @@
       .module('app.core')
       .factory('userService', userService);
 
-    userService.$inject = ['$firebaseArray', 'firebaseDataService'];
+    userService.$inject = [
+                            '$firebaseArray',
+                            '$firebaseObject',
+                            'firebaseDataService'
+                          ];
 
-    function userService($firebaseArray, firebaseDataService)
+    function userService($firebaseArray, $firebaseObject, firebaseDataService)
     {
-
       var users = null;
+      var setUsers = null;
       
       var service = {
         root: User.email,

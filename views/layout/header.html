@@ -1,14 +1,16 @@
 <nav class="large-12 header ">
-    <div class="row">
-        <div class="large-6 columns navbar-header">
-        <a ng-href="#/" title="Return to the home page."><img ng-src="assets/img/logo_391.png" alt="Stark Company" title="Stark, Winter is coming." border="0" class="logo"/></a>
-        </div>
-        <div id="navbar" class="large-6 columns collapse navbar-collapse auth">
-            <div class="nav navbar-nav navbar-right">
-            <a href="#/login" ng-hide="vm.isLoggedIn()" class="button primary login"><i class="fa fa-sign-in"></i> Log in</a>
-                <a href="" ng-click="vm.logout()" ng-show="vm.isLoggedIn()" class="button primary logout"><i class="fa fa-sign-out"></i> Log out</a>
-                <a class="button primary register" href="#/register" ng-hide="vm.isLoggedIn()" role="button"><i class="fa fa-user-plus"></i> Register</a>
-            </div>
-        </div>
+  <div class="row">
+    <div class="large-6 columns navbar-header">
+      <a ng-href="#/" title="Return to the home page."><img ng-src="assets/img/logo_391.png" alt="Stark Company" title="Stark, Winter is coming." border="0" class="logo"/></a>
     </div>
+    <taglib-navbar ng-hide="nav(showNav != showNav)"></taglib-navbar>
+    <div id="navbar" class="large-3 columns collapse navbar-collapse auth">
+      <a href="#/login" ng-hide="vm.isLoggedIn()" class="button primary hollow login navButton"><i class="fa fa-sign-in"></i> Log in</a>
+      <a href="" ng-click="vm.logout()" ng-show="vm.isLoggedIn()" class="button primary hollow logout navButton"><i class="fa fa-sign-out"></i> Log out</a>
+      <a href="#/register" ng-hide="vm.isLoggedIn()" class="button primary hollow register navButton" role="button"><i class="fa fa-user-plus"></i> Register</a>
+    </div>
+  </div>
 </nav>
+<script type="text/javascript">
+  navigation();
+</script>

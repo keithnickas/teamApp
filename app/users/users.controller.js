@@ -6,11 +6,17 @@
       .module('app.users')
       .controller('UsersListController', UsersListController);
 
-    UsersListController.$inject = ['userService', 'user'];
+    UsersListController.$inject = [
+                                    'userService',
+                                    '$firebaseArray',
+                                    '$firebaseObject',
+                                    'firebaseDataService'
+                                  ];
 
     function UsersListController(userService, user)
     {
       var vm = this;
+
       vm.users = userService.getUsersByUid(user);
     }
 

@@ -4,9 +4,9 @@
 
     angular
       .module('app.teams')
-      .directive('taglibTeamList', taglibTeamList);
+      .directive('taglibTeamTable', taglibTeamTable);
 
-    function taglibTeamList() 
+    function taglibTeamTable() 
     {
       return {
         templateUrl: 'views/teams/directives/teamTable.html',

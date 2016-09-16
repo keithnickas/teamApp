@@ -8,10 +8,12 @@
 
     TeamsListController.$inject = ['teamService'];
 
-     function TeamsListController(teamService, team)
+     function TeamsListController(teamService)
     {
       var vm = this;
-      vm.teams  = teamService.getTeamsByUser(team);
+
+      vm.teams  = teamService.getTeamsByUser();
+      vm.teamUsers = teamService.getTeamsByUser();
     }
   }
 )();

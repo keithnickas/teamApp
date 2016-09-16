@@ -57,6 +57,10 @@ ul, li {
     background: rgba(240, 240, 240, 0.93);
 }
 
+#teamMembersWrapper {
+    padding-top: 1.2rem;
+}
+
 /* font sizes/colors */
 .textWhite {
     color: #fff;
@@ -79,12 +83,15 @@ ul, li {
 }
 
 /* Header and Navigation */
-#topNavigation {
+#topNavigation, .auth {
+    padding: 1.2rem 0 0;
+}
+
+.userActions, .teamActions {
     padding: 0.85rem 0 0;
 }
 
 .auth {
-    line-height: 90px;
     position: relative;
     right: 0;
 }
@@ -101,18 +108,44 @@ ul, li {
         border-radius: 2px;
         border: 1px solid #d7d7d7;
     }
-    .small-3.addUser {
+    .small-3.addUser, .small-3.addTeam {
         display: block;
         position: absolute;
         background: #fff;
         padding: 1rem;
-        margin-top: -2rem;
-        margin-left: 5.8rem;
+        margin-top: -0.1rem;
         border: 1px solid #d7d7d7;
         border-radius: 2px;
     }
-    .small-3.addUser.hide {
+    .small-3.addUser.hide, .small-3.addTeam.hide {
         margin-top: -3000rem;
+    }
+    .arrowBoxTop {
+        position: relative;
+        background: #fff;
+        border: 1px solid #d7d7d7;
+    }
+    .arrowBoxTop:after, .arrowBoxTop:before {
+        bottom: 100%;
+        left: 17%;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+    }
+    .arrowBoxTop:after {
+        border-color: rgba(255, 255, 255, 0);
+        border-bottom-color: #fff;
+        border-width: 10px;
+        margin-left: -10px;
+    }
+    .arrowBoxTop:before {
+        border-color: rgba(215, 215, 215, 0);
+        border-bottom-color: #d7d7d7;
+        border-width: 10px;
+        margin-left: -10px;
     }
 
 /* Main Content */
@@ -203,7 +236,7 @@ img.logo {
     #usersList li:hover {
         box-shadow: 0 0 5px 0 #ccc;
         border: 1px solid #999;
-        height: 130px;
+        height: 180px;
     }
     #usersList li>.userName {
         border-bottom: 0px solid transparent;

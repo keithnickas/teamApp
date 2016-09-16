@@ -15,7 +15,6 @@
         users: rootRef.child('users'),
         emails: rootRef.child('emails'),
         teams: rootRef.child('teams'),
-        users: rootRef.child('users')
       };
       return service;
     }
