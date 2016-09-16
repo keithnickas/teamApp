@@ -1,0 +1,14 @@
+<div class="large-12 form-inline addTeamContainer">
+  <div class="row small-3 addTeam hide form-inline arrowBoxTop">
+    <form ng-submit="vm.addTeam()" class="form-inline team-form">
+      <div class="form-group form-inline">
+        <input ng-model="vm.newTeam.name" type="text" class="form-control" placeholder="Name" required>
+        <button type="submit" class="button primary">Add Team</button>
+        <button id="closeButton" type="button" class="button primary hollow cancelButton float-right">Cancel</button>
+      </div>
+    </form>
+  </div>    
+</div>
+<script type="text/javascript">
+  addTeam();
+</script>

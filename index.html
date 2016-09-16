@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Stark Company</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" crossorigin="anonymous" integrity="sha256-haz1W/Eq5M2zCNvLT8+8rjKxmMvlrNJCHuiELtL8/a4=" href="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.css">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.5/firebase-ui-auth.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script type="text/javascript" crossorigin="anonymous" integrity="sha256-bI2iPDxBx2iBPbZ/GBiJ9fOIkeZ+GvKRtUTDGKJuytI=" src="https://cdn.jsdelivr.net/foundation/6.2.1/foundation.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script type="text/javascript" src="https://cdn.firebase.com/libs/angularfire/2.0.2/angularfire.min.js"></script>
+  </head>
+  <body>
+    <!--header directive -->
+    <taglib-header></taglib-header>
+    <!--Main content that changes based on route-->
+    <div ng-view class="container"></div>
+
+    <!-- footer directive -->
+    <taglib-footer></taglib-footer>
+
+    <!--main app module-->
+    <script type="text/javascript" src="app/app.module.js"></script>
+
+    <!--auth module-->
+    <script type="text/javascript" src="app/auth/auth.module.js"></script>
+    <script type="text/javascript" src="app/auth/config.route.js"></script>
+    <script type="text/javascript" src="app/auth/auth.controller.js"></script>
+    <script type="text/javascript" src="app/auth/auth.service.js"></script>
+    <script type="text/javascript" src="app/auth/authForm.directive.js"></script>
+
+    <!--landing module-->
+    <script type="text/javascript" src="app/landing/landing.module.js"></script>
+    <script type="text/javascript" src="app/landing/config.route.js"></script>
+
+    <!--teamList module-->
+    <script type="text/javascript" src="app/teams/team.module.js"></script>
+    <script type="text/javascript" src="app/teams/config.route.js"></script>
+    <script type="text/javascript" src="app/teams/team.controller.js"></script>
+    <script type="text/javascript" src="app/teams/directives/teamForm.directive.js"></script>
+    <script type="text/javascript" src="app/teams/directives/teamTable.directive.js"></script>
+    <script type="text/javascript" src="app/teams/directives/teamActions.directive.js"></script>
+
+    <!--users module-->
+    <script type="text/javascript" src="app/users/users.module.js"></script>
+    <script type="text/javascript" src="app/users/config.route.js"></script>
+    <script type="text/javascript" src="app/users/users.controller.js"></script>
+    <script type="text/javascript" src="app/users/directives/userForm.directive.js"></script>
+    <script type="text/javascript" src="app/users/directives/userTable.directive.js"></script>
+    <script type="text/javascript" src="app/users/directives/userActions.directive.js"></script>
+
+    <!--core module-->
+    <script type="text/javascript" src="app/core/core.module.js"></script>
+    <script type="text/javascript" src="app/core/constants.js"></script>
+    <script type="text/javascript" src="app/core/firebaseData.service.js"></script>
+    <script type="text/javascript" src="app/core/team.service.js"></script>
+    <script type="text/javascript" src="app/core/user.service.js"></script>
+
+    <!--layout module-->
+    <script type="text/javascript" src="app/layout/layout.module.js"></script>
+    <script type="text/javascript" src="app/layout/header.directive.js"></script>
+    <script type="text/javascript" src="app/layout/navbar.directive.js"></script>
+    <script type="text/javascript" src="app/layout/footer.directive.js"></script>
+    
+    <!--ux and interaction-->
+    <script type="text/javascript" src="assets/js/interaction.js"></script>
+
+    <script type="text/javascript">
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAy5B65ScsZ85G6KsJG0NOcRu8P4HGrX7c",
+        authDomain: "teamapp-e2f53.firebaseapp.com",
+        databaseURL: "https://teamapp-e2f53.firebaseio.com",
+        storageBucket: "teamapp-e2f53.appspot.com",
+      };
+      firebase.initializeApp(config);
+      $(document).foundation();
+    </script>
+  </body>
+</html>
