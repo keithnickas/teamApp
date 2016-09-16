@@ -8,21 +8,13 @@
             </label>
         </div>
         <div class="sortBy large-3 columns">
-            <label>Sort By:
-                <select ng-model="sortBy">
-                    <option value="name">Name</option>
-                    <option value="email">Email</option>
-                    <option value="team">Team</option>
-                    <option value="city">City</option>
-                </select>
-            </label>
         </div>
       </div>
     </div>
       <div class="teamMembersList large-12">
         <div class="row">
           <ul id="usersList" class="large-6 columns">
-          <li ng-animate="'animate'" class="columns userListItem" ng-repeat="(key, team) in vm.teams | filter: query | orderBy: sortBy" index="{{team.$id}}">
+          <li ng-animate="'animate'" class="columns userListItem" ng-repeat="(key, team) in vm.teams | filter: query | orderBy: 'name'" index="{{team.$id}}">
             <span class="userName columns">{{team.name}}
                 <span class="inlineDetails">
                   <span class="userTeam">{{team.length}}</span>
@@ -34,7 +26,7 @@
                 <span class="userLocation columns"><span class="bold">Admin:</span> {{teams.phone}}</span>
               </div>
               <div class="large-6 columns removeUser">
-                <button ng-click="vm.removeUser(user)" class="button warning columns right">Remove Team</button>
+                <button ng-click="vm.removeTeam(team)" class="button warning columns right">Remove Team</button>
               </div>
             </li>
           </ul>

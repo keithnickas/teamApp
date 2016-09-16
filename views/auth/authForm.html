@@ -6,15 +6,21 @@
                 <h2 class="form-signin-heading" ng-bind="vm.formTitle"></h2>
 
                 <!--Server authentication error-->
-                <p ng-show="vm.error" class="text-danger" ng-bind="vm.error"></p>
-
+                <div class="callout" ng-show="vm.error">
+                    <div class="small-12">
+                        <div class="small-1 column alert"><i class="fa fa-exclamation"></i></div>
+                        <div class="small-11 error columns">
+                            <p class="alert" ng-bind="vm.error"></p>
+                        </div>
+                    </div>
+                </div>
                 <!--Email input-->
                 <input ng-model="vm.user.email" ng-model-options="{ updateOn: 'default blur', debounce: { default: 1000, blur: 0 } }" type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
 
                 <!--Email error-->
                 <div ng-show="authForm.$submitted">
-                    <p ng-show="authForm.email.$error.required" class="text-danger">Email required</p>
-                    <p ng-show="authForm.email.$error.email" class="text-danger">Please enter a valid email.</p>
+                    <p ng-show="authForm.email.$error.required" class="textAlert">Email required</p>
+                    <p ng-show="authForm.email.$error.email" class="textAlert">Please enter a valid email.</p>
                 </div>
 
                 <!--Password input-->
@@ -22,13 +28,13 @@
 
                 <!--Password error-->
                 <div ng-show="authForm.$submitted">
-                    <p ng-show="authForm.password.$error.required" class="text-danger">Password required</p>
+                    <p ng-show="authForm.password.$error.required" class="textAlert">Password required</p>
                 </div>
 
                <!--Team Assignment input-->
                 <!-- input ng-model="vm.user.team" type="text" name="team" class="form-control" placeholder="Team" -->
 
-                <button class="button primary" ng-bind="vm.formTitle" type="submit"></button>
+                <button class="button large primary signUpButton" ng-bind="vm.formTitle" type="submit"></button>
             </form>         
         </div>
     </div>

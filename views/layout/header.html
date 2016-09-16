@@ -5,9 +5,10 @@
     </div>
     <taglib-navbar ng-hide="nav(showNav != showNav)"></taglib-navbar>
     <div id="navbar" class="large-3 columns collapse navbar-collapse auth">
-      <a href="#/login" ng-hide="vm.isLoggedIn()" class="button primary hollow login navButton"><i class="fa fa-sign-in"></i> Log in</a>
-      <a href="" ng-click="vm.logout()" ng-show="vm.isLoggedIn()" class="button primary hollow logout navButton"><i class="fa fa-sign-out"></i> Log out</a>
-      <a href="#/register" ng-hide="vm.isLoggedIn()" class="button primary hollow register navButton" role="button"><i class="fa fa-user-plus"></i> Register</a>
+      <a href="#/login" ng-hide="vm.isLoggedIn()" class="button primary hollow login float-right navButton"><i class="fa fa-sign-in"></i> Log in</a>
+      <a href="" ng-click="vm.logout()" ng-show="vm.isLoggedIn()" class="button primary hollow logout navButton float-right"><i class="fa fa-sign-out"></i> Log out</a>
+      <a href="#/register" ng-hide="vm.isLoggedIn()" class="button primary hollow register float-right navButton" role="button"><i class="fa fa-user-plus"></i> Register
+      </a>
     </div>
   </div>
 </nav>

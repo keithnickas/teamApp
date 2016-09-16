@@ -32,19 +32,20 @@
       function removeTeam(user)
       {
         // this will set the value for teamName to null before being saved back to the firebaseData.service REST api
-        //vm.users.$save(user.teamName = "null");
-        vm.users.$save(user.teamName = "null");
+        vm.users.$add(user.teamName = null);
         // this saves the changes to firebaseData.service REST api
-        vm.users.push(user);
+        vm.users.$save(user);
 
       }
       /*
-        TODO: this item is in progress; current bug is the "user" scope expression is undefined when init function from
-        the form 
+        TODO: this item is in progress; current bug is the "user" inputs the data but the form info isn't being passed 
+        to Firebase from the form 
       */
       function addTeamToUser(user) 
       {
-
+        vm.users.$add(user.teamName = "UX");
+        // this saves the changes to firebaseData.service REST api
+        vm.users.$save(user.teamName);
       }
 
       // removes the selected user
