@@ -59,6 +59,7 @@ ul, li {
 
 #teamMembersWrapper {
     padding-top: 1.2rem;
+    min-height: 33rem;
 }
 
 /* font sizes/colors */
@@ -100,13 +101,49 @@ ul, li {
     float: right;
 }
 
+.register.navButton {
+    margin-right: 0.85rem;
+}
+
 .large-12.form-signin {
     margin: 40px 0 0;
 }
+
+    .form-signin-heading {
+        text-align: center;
+    }
+    .authForm .callout {
+        border-radius: 2px;
+        display: flex;
+        padding: 0;
+        border-color: #e00;
+    }
+    .small-1.alert {
+        background: #ee0000;
+        color: #fff;
+        height: 100%;
+        padding: 1.2rem;
+    }
+    .small-11.error p.alert {
+        margin-top: 1.2rem;
+    }
     .authForm {
         background: #fff;
         border-radius: 2px;
         border: 1px solid #d7d7d7;
+        padding: 1.2rem;
+    }
+    .alert {
+        color: #ee0000;
+    }
+    .signUpButton {
+        margin: 0 auto;
+        display: block;
+    }
+    a.button.navButton.hollow {
+        border-top: 1px solid transparent;
+        border-left: 1px solid transparent;
+        border-right: 1px solid transparent;
     }
     .small-3.addUser, .small-3.addTeam {
         display: block;
@@ -147,6 +184,10 @@ ul, li {
         border-width: 10px;
         margin-left: -10px;
     }
+
+.footer {
+    min-height: 10rem;
+}
 
 /* Main Content */
 
