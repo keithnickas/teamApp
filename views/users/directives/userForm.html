@@ -1,9 +1,11 @@
 <div class="large-12 form-inline addUserContainer">
   <div class="row small-3 addUser hide form-inline arrowBoxTop">
-    <form ng-submit="vm.addUser()" class="form-inline user-form">
+    <form ng-submit="vm.addUser(user)" class="form-inline user-form">
       <div class="form-group form-inline">
-        <label for="name" class="label">Name:</label>
-          <input ng-model="vm.newUser.name" type="text" class="form-control" name="name" placeholder="Name" required>
+        <label for="firstName" class="label">First Name:</label>
+          <input ng-model="vm.newUser.firstName" type="text" class="form-control" name="firstName" placeholder="Name" required>
+        <label for="lastName" class="label">Last Name:</label>
+          <input ng-model="vm.newUser.lastName" type="text" class="form-control" name="lastName" placeholder="Last Name" required>
         <label for="phone" class="label">Phone Number:</label>
           <input ng-model="vm.newUser.phone" type="text" class="form-control" name="phone" placeholder="Phone Number" required>
         <label for="email" class="label">Email:</label>
@@ -18,4 +20,7 @@
 </div>
 <script type="text/javascript">
   addUser();
+  $('#addUserButton').click(function(){
+    initFoundation();
+  });
 </script>

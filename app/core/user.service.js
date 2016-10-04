@@ -15,12 +15,11 @@
     function userService($firebaseArray, $firebaseObject, firebaseDataService)
     {
       var users = null;
-      var setUsers = null;
+      var teams = null;
       
       var service = {
-        root: User.email,
         User: User,
-        teamName: User.teamName,
+        Teams: Teams,
         getUsersByUid: getUsersByUid,
         reset: reset
       };
@@ -28,10 +27,16 @@
       return service;
 
       function User() {
-        this.name = '';
+        this.firstName = '';
+        this.lastName = '';
         this.phone = '';
         this.email = '';
         this.teamName = '';
+      }
+
+      function Teams(){
+        this.teamName = '';
+        this.email = '';
       }
 
       function getUsersByUid(uid)

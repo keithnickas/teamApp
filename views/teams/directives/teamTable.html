@@ -14,19 +14,19 @@
       <div class="teamMembersList large-12">
         <div class="row">
           <ul id="usersList" class="large-6 columns">
-          <li ng-animate="'animate'" class="columns userListItem" ng-repeat="(key, team) in vm.teams | filter: query | orderBy: 'name'" index="{{team.$id}}">
-            <span class="userName columns">{{team.name}}
+          <li ng-animate="'animate'" class="columns userListItem" ng-repeat="(key, team) in vm.teams | filter: query | orderBy: 'name'" ng-class="{'isClicked':isClicked}">
+            <span class="userName columns" ng-click="isClicked=!isClicked">{{team.name}}
                 <span class="inlineDetails">
                   <span class="userTeam">{{team.length}}</span>
                 </span>
               </span>
               <div class="large-6 columns">
-              <span class="userTeam columns"><span class="bold">Users:</span> <span ng-repeat="user in vm.teamUsers">{{user.user || "No users"}}</span>
+                <span class="userTeam columns"><span class="bold">Users:</span> <span ng-repeat="user in vm.teamUsers">{{user.user || "No users"}}</span>
                 <button ng-click="vm.removeUserFromTeam(user.teamName)" title="Remove User from Team" class="tiny button alert"><i class="fa fa-times"></i></button></span>
-                <span class="userLocation columns"><span class="bold">Admin:</span> {{teams.phone}}</span>
+                <span class="userLocation columns"><span class="bold">Admin:</span> {{team.phone}}</span>
               </div>
               <div class="large-6 columns removeUser">
-                <button ng-click="vm.removeTeam(team)" class="button warning columns right">Remove Team</button>
+                <button ng-click="vm.removeTeam(team)" class="button alert columns right"><i class="fa fa-times"></i>&nbsp;Remove Team</button>
               </div>
             </li>
           </ul>

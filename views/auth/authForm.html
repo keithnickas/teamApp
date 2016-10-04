@@ -15,7 +15,12 @@
                     </div>
                 </div>
                 <!--Email input-->
-                <input ng-model="vm.user.email" ng-model-options="{ updateOn: 'default blur', debounce: { default: 1000, blur: 0 } }" type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
+                <span class="input input--manami">
+                    <input id="input-email" ng-model="vm.user.email" ng-model-options="{ updateOn: 'default blur', debounce: { default: 1000, blur: 0 } }" type="email" name="email" class="form-control input__field input__field--manami" placeholder="Email address" required autofocus>
+                    <label class="input__label input__label--manami" for="input-email">
+                        <span class="input__label-content input__label-content--manami">Email Address</span>
+                    </label>
+                </span>
 
                 <!--Email error-->
                 <div ng-show="authForm.$submitted">
@@ -24,7 +29,12 @@
                 </div>
 
                 <!--Password input-->
-                <input ng-model="vm.user.password" type="password" name="password" class="form-control" placeholder="Password" required>
+                <span class="input input--manami">
+                    <input id="input-password" ng-model="vm.user.password" type="password" name="password" class="form-control input__field input__field--manami" placeholder="Password" required>
+                    <label class="input__label input__label--manami" for="input-password">
+                        <span class="input__label-content input__label-content--manami">Password</span>
+                    </label>
+                </span>
 
                 <!--Password error-->
                 <div ng-show="authForm.$submitted">
