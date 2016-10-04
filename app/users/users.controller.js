@@ -16,9 +16,7 @@
     function UsersListController(userService, user)
     {
       var vm = this;
-
       vm.users = userService.getUsersByUid(user);
     }
-
   }
 )();

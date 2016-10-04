@@ -67,11 +67,11 @@ ul, li {
     color: #fff;
 }
 
-.textLightGrey {
+.textLightGrey, .button.textLightGrey {
     color: #d7d7d7;
 }
 
-.textDarkGrey {
+.textDarkGrey, .button.textDarkGrey {
     color: #777;
 }
 
@@ -144,6 +144,10 @@ ul, li {
         border-top: 1px solid transparent;
         border-left: 1px solid transparent;
         border-right: 1px solid transparent;
+    }
+    a.button.navButton.hollow.active {
+        border-bottom: 2px solid #1583cc;
+        color: #1583cc;
     }
     .small-3.addUser, .small-3.addTeam {
         display: block;
@@ -262,7 +266,7 @@ img.logo {
         left: -19px;
     }
 
-#usersList li {
+#usersList li.userListItem {
     display: block;
     float: left;
     height: 45px;
@@ -274,7 +278,7 @@ img.logo {
     transition: all 0.3s ease-in-out;
     overflow: hidden;
 }
-    #usersList li:hover {
+    #usersList li.userListItem.isClicked {
         box-shadow: 0 0 5px 0 #ccc;
         border: 1px solid #999;
         height: 180px;
@@ -284,7 +288,7 @@ img.logo {
         margin-bottom: 0;
         transition: all, 0.5s ease-in-out;
     }
-    #usersList li:hover>.userName {
+    #usersList li.userListItem.isClicked>.userName {
         border-bottom: 1px solid #d7d7d7;
         margin-bottom: 10px;
         transition: all, 0.5s ease-in-out;
@@ -294,16 +298,16 @@ img.logo {
         padding: 3px;
         margin: 0;
     }
-    #usersList li .removeUser {
+    #usersList li.userlistItem .removeUser {
         visibility: hidden;
     }
-    #usersList li:hover, #usersList li:hover .removeUser {
+    #usersList li.userlistItem.isClicked, #usersList li.userlistItem.isClicked .removeUser {
         overflow: hidden;
         visibility: visible;
         transition: all  0.3s ease-in-out;
     }
     #usersList li>span:not(:first-child), 
-    #usersList li:hover>span:not(:first-child) a {
+    #usersList li.userListItem>span:not(:first-child) a {
         color: #fff;
         visibility: hidden;
         overflow: hidden;
@@ -311,6 +315,7 @@ img.logo {
     }
         #usersList li>.userName {
         font-size: 1.3rem;
+        line-height: 2rem;
     }
         #usersList li>.userName>.inlineDetails {
             visibility: visible;
@@ -318,20 +323,29 @@ img.logo {
             color: #999;
             transition: all 0.3s ease-in-out;
         }
-        #usersList li:hover>.userName>.inlineDetails {
-            color: #fff;
-            visibility: hidden;
-            transition: all 0.3s ease-in-out;
-        }
-        #usersList li:hover>span:not(:first-child),  {
+        #usersList li.userListItem.isClicked>span:not(:first-child),  {
             visibility: visible;
             overflow: visible;
             color: #0a0a0a;
             transition: all 0.5s ease-in-out;
         }
-            #usersList li:hover>span:not(:first-child)>a {
+            #usersList li.userListItem.isClicked>span:not(:first-child)>a {
             visibility: visible;
             overflow: visible;
             color: #2199e8;
             transition: all 0.5s ease-in-out;
         }
+
+.team-form {
+    display: flex;
+}
+
+.team-form>input.form-control, .team-form .button {
+    height: 1.8rem;
+    margin: 5px 0;
+}
+
+.add-team.isClicked {
+    display: inline-block;
+    margin-top: 5px 0;
+}

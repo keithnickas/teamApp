@@ -12,6 +12,23 @@ function navigation()
       $(this).addClass('hollow');
     }
   );
+
+  $('.navButton').click(
+    function()
+    {
+      if($('.navButton').hasClass('active') && $(this).attr('id') !== 'user')
+      {
+        $('#users').removeClass('active');
+        $(this).addClass('active')
+      }
+
+      if($('.navButton').hasClass('active') && $(this).attr('id') !== 'teams')
+      {
+        $('#teams').removeClass('active');
+        $(this).addClass('active')
+      }
+    }
+  );
 }
 
 /*
@@ -47,6 +64,7 @@ function addUser()
       }
     }
   );
+  
   $('.cancelButton').click(
     function()
     {
@@ -58,7 +76,6 @@ function addUser()
     }
   );
 }
-
 
 function addTeamForm()
 {
@@ -98,4 +115,11 @@ function addTeam()
       }
     }
   );
+}
+function initFoundation()
+{
+  setTimeout(function()
+  {
+    $(document).foundation();
+  }, 1000);
 }

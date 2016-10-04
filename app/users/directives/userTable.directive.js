@@ -20,7 +20,7 @@
       };
     }
 
-    UsersTableController.$inject = ['userService'];
+    UsersTableController.$inject = ['userService', '$scope'];
 
     function UsersTableController(userService)
     {
@@ -31,21 +31,18 @@
 
       function removeTeam(user)
       {
-        // this will set the value for teamName to null before being saved back to the firebaseData.service REST api
-        vm.users.$add(user.teamName = null);
-        // this saves the changes to firebaseData.service REST api
+        // this sets the value for teamName to null before being saved back to the firebase REST api
+        vm.users.$save(user.teamName = null);
+        // this saves the changes to firebase REST api
         vm.users.$save(user);
 
       }
-      /*
-        TODO: this item is in progress; current bug is the "user" inputs the data but the form info isn't being passed 
-        to Firebase from the form 
-      */
-      function addTeamToUser(user) 
+
+      function addTeamToUser(user, teamName) 
       {
-        vm.users.$add(user.teamName = "UX");
+        var addTeam = vm.users.$save(user.teamName = teamName);
         // this saves the changes to firebaseData.service REST api
-        vm.users.$save(user.teamName);
+        vm.users.$save(user);
       }
 
       // removes the selected user

@@ -27,6 +27,7 @@
 
       function Team(){
         this.name = '';
+        this.users = '';
       }
 
       function getTeamsByUser(uid)
